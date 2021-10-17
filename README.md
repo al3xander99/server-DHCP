@@ -1,2 +1,5 @@
-# server-DHCP
-Proiect retele de calculatoare
+# Server-DHCP
+
+Proiect pentru 'Retele de calculatoare' realizat de:
+        Alexandru Postudor
+        Stefan Lazar
