@@ -3,7 +3,7 @@ import os
 import socket
 import threading
 import queue
-import time
+import time # why use this?
 
 if __name__ == '__main__':
     # serverDHCP.run()
