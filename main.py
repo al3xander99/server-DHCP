@@ -6,4 +6,5 @@ import queue
 import time
 
 if __name__ == '__main__':
-    //serverDHCP.run()
+    # serverDHCP.run()
+    # nu stiu daca o sa functioneze ce ai scris la line 9       -sl
