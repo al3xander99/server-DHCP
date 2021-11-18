@@ -1,5 +1,4 @@
 # Server-DHCP
 
-Proiect pentru 'Retele de calculatoare' realizat de:
-        - Alexandru Postudor
-        - Stefan Lazar
+Proiect pentru 'Retele de calculatoare' realizat de: - Alexandru Postudor - Stefan Lazar
+Test Commit
