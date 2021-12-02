@@ -12,6 +12,40 @@ packet = b''
 
 
 class packet():
+    def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER, 
+                HOST_NAME, BROADCAST_ADDRESS, ADDRESS_REQUEST, 
+                LEASE_TIME, DHCP_MESSAGE_TYPE, RENEWAL_TIME, CLIENT_ID, END):
+                
+                self.PAD = PAD
+                self.SUBNET_MASK = SUBNET_MASK
+                self.ROUTER = ROUTER
+                self.DOMAIN_SERVER = DOMAIN_SERVER
+                self.HOST_NAME = HOST_NAME
+                self.BROADCAST_ADDRESS = BROADCAST_ADDRESS
+                self.ADDRESS_REQUEST = ADDRESS_REQUEST
+                self.LEASE_TIME = LEASE_TIME
+                self.DHCP_MESSAGE_TYPE = DHCP_MESSAGE_TYPE
+                self.RENEWAL_TIME = RENEWAL_TIME
+                self.CLIENT_ID = CLIENT_ID
+                self.END = END
+
+    #PAD = 0
+
+    #-------10 OPTIONS-------
+
+    #SUBNET_MASK = 1
+    #ROUTER = 3
+    #DOMAIN_SERVER = 6
+    #HOST_NAME = 12
+    #BROADCAST_ADDRESS = 28
+    #ADDRESS_REQUEST = 50
+    #LEASE_TIME = 51
+    #DHCP_MESSAGE_TYPE = 53
+    #RENEWAL_TIME = 58
+    #CLIENT_ID = 61
+
+    #------------------------
+    #END = 255
     pass
 
 # optiuni: tipul pachetului (D/O/R/A), sfarsitul pachetului (0xFF), masca de retea, adresa de gateway (comunicat in ext retelei), adresa de serere dns
