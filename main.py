@@ -11,8 +11,8 @@ import struct  # cu functia struct.pack() combinam octetii specifici unui mesaj 
 packet = b''
 
 
-class packet():
-    def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER,
+# class packet():
+   def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER,
                  HOST_NAME, BROADCAST_ADDRESS, ADDRESS_REQUEST,
                  LEASE_TIME, DHCP_MESSAGE_TYPE, RENEWAL_TIME, CLIENT_ID, END):
 
@@ -38,6 +38,20 @@ class packet():
         self.BROADCAST_ADDRESS = (15 << 15) & mesaj
         self.ADDRESS_REQUEST = (15 << 14) & mesaj
         self.LEASE
+
+
+def DISCOVERY:
+    def __init__(self, data, transID):
+        self.data = data
+        self.transID = transID
+        self.offerIP = ''
+        self.nextServerIP = ''
+        self.DHCPServerIdentifier = ''
+        self.leaseTime = ''
+        self.router = ''
+        self.subnetMask = ''
+        self.DNS = []
+        self.unpack()
 
     #PAD = 0
 
