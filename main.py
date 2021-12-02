@@ -12,26 +12,36 @@ packet = b''
 
 
 class packet():
-    def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER, 
-                HOST_NAME, BROADCAST_ADDRESS, ADDRESS_REQUEST, 
-                LEASE_TIME, DHCP_MESSAGE_TYPE, RENEWAL_TIME, CLIENT_ID, END):
-                
-                self.PAD = PAD
-                self.SUBNET_MASK = SUBNET_MASK
-                self.ROUTER = ROUTER
-                self.DOMAIN_SERVER = DOMAIN_SERVER
-                self.HOST_NAME = HOST_NAME
-                self.BROADCAST_ADDRESS = BROADCAST_ADDRESS
-                self.ADDRESS_REQUEST = ADDRESS_REQUEST
-                self.LEASE_TIME = LEASE_TIME
-                self.DHCP_MESSAGE_TYPE = DHCP_MESSAGE_TYPE
-                self.RENEWAL_TIME = RENEWAL_TIME
-                self.CLIENT_ID = CLIENT_ID
-                self.END = END
+    def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER,
+                 HOST_NAME, BROADCAST_ADDRESS, ADDRESS_REQUEST,
+                 LEASE_TIME, DHCP_MESSAGE_TYPE, RENEWAL_TIME, CLIENT_ID, END):
+
+        self.PAD = PAD
+        self.SUBNET_MASK = SUBNET_MASK
+        self.ROUTER = ROUTER
+        self.DOMAIN_SERVER = DOMAIN_SERVER
+        self.HOST_NAME = HOST_NAME
+        self.BROADCAST_ADDRESS = BROADCAST_ADDRESS
+        self.ADDRESS_REQUEST = ADDRESS_REQUEST
+        self.LEASE_TIME = LEASE_TIME
+        self.DHCP_MESSAGE_TYPE = DHCP_MESSAGE_TYPE
+        self.RENEWAL_TIME = RENEWAL_TIME
+        self.CLIENT_ID = CLIENT_ID
+        self.END = END
+
+    def assembly(self, mesaj):
+        self.PAD = 0
+        self.SUBNET_MASK = (15 << 28) & mesaj
+        self.ROUTER = (15 << 24) & mesaj
+        self.DOMAIN_SERVER = (15 << 20) & mesaj
+        self.HOST_NAME = (1 << 19) & mesaj
+        self.BROADCAST_ADDRESS = (15 << 15) & mesaj
+        self.ADDRESS_REQUEST = (15 << 14) & mesaj
+        self.LEASE
 
     #PAD = 0
 
-    #-------10 OPTIONS-------
+    # -------10 OPTIONS-------
 
     #SUBNET_MASK = 1
     #ROUTER = 3
@@ -44,7 +54,7 @@ class packet():
     #RENEWAL_TIME = 58
     #CLIENT_ID = 61
 
-    #------------------------
+    # ------------------------
     #END = 255
     pass
 
