@@ -57,9 +57,9 @@ def DISCOVERY():
 
         self.unpack()
     def unpack(self): # mesaj[0:7] = 35 mesaj[8:15] = # of following bytes  
-        self.SUBNET_MASK = mesaj[16:47]
-        self.ROUTER = mesaj[48:79]
-        self.DOMAIN_SERVER = mesaj[80:111]
+        self.SUBNET_MASK = self.mesaj[16:47]
+        self.ROUTER = self.mesaj[48:79]
+        self.DOMAIN_SERVER = self.mesaj[80:111]
 
 
 
@@ -86,10 +86,17 @@ def DISCOVERY():
 # optiuni: tipul pachetului (D/O/R/A), sfarsitul pachetului (0xFF), masca de retea, adresa de gateway (comunicat in ext retelei), adresa de serere dns
 
 
-class DHCP_Offer:
+def Offer():
+    def __init__(self, mesaj):
+
+def Request():
+    def __init__(self, mesaj):
+
+def Ack():
     def __init__(self, mesaj):
 
 
 if __name__ == '__main__':
     print('Hello world')
     # serverDHCP.run()
+
