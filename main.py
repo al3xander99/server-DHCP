@@ -8,6 +8,9 @@ import time
 import struct  # cu functia struct.pack() combinam octetii specifici unui mesaj dhcp intr-un pachet
 # vom creea clasa packet, cu campuri ce corespund fiecarui parametru din cadrul unui pachet. la final, vom "impacheta" acesti parametri intr-un singur sir de octeti cu functia struct.pack()
 
+packet = b''
+
+
 #  class packet():
 #    def __init__(self, PAD, SUBNET_MASK, ROUTER, DOMAIN_SERVER,
 #                  HOST_NAME, BROADCAST_ADDRESS, ADDRESS_REQUEST,
@@ -38,17 +41,26 @@ import struct  # cu functia struct.pack() combinam octetii specifici unui mesaj 
 
 
 def DISCOVERY():
-    def __init__(self, data, transID):
-        self.data = data
-        self.transID = transID
-        self.offerIP = ''
-        self.nextServerIP = ''
-        self.DHCPServerIdentifier = ''
-        self.leaseTime = ''
-        self.router = ''
-        self.subnetMask = ''
-        self.DNS = []
+    def __init__(self, mesaj):
+        self.mesaj = mesaj
+        # self.transID = transID
+        self.SUBNET_MASK = ''
+        self.ROUTER = ''
+        self.DOMAIN_SERVER = ''
+
+        # self.BROADCAST_ADDRESS = '' (de pus in REQUEST?)
+        # self.ADDRESS_REQUEST = ''
+        # self.LEASE_TIME = ''
+        # self.DHCP_MESSAGE_TYPE = ''
+        # self.RENEWAL_TIME = ''
+        # self.CLIENT_ID = ''
+
         self.unpack()
+
+    def unpack(self):  # mesaj[0:7] = 35 mesaj[8:15] = # of following bytes
+        self.SUBNET_MASK = self.mesaj[16:47]
+        self.ROUTER = self.mesaj[48:79]
+        self.DOMAIN_SERVER = self.mesaj[80:111]
 
     #PAD = 0
 
@@ -72,8 +84,16 @@ def DISCOVERY():
 # optiuni: tipul pachetului (D/O/R/A), sfarsitul pachetului (0xFF), masca de retea, adresa de gateway (comunicat in ext retelei), adresa de serere dns
 
 
-class DHCP_Offer:
-    def __init__(self):
+def Offer():
+    def __init__(self, mesaj):
+
+
+def Request():
+    def __init__(self, mesaj):
+
+
+def Ack():
+    def __init__(self, mesaj):
 
 
 if __name__ == '__main__':
