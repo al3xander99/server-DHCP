@@ -1,4 +1,7 @@
 from random import randint
+from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
+from interfata_eleganta_2005 import Ui_MainWindow
 import os
 # pentru trimis pachete (cu udp) - folosind wireshark, receptionam pachetul
 import socket
@@ -86,17 +89,26 @@ def DISCOVERY():
 
 def Offer():
     def __init__(self, mesaj):
+        pass
 
 
 def Request():
     def __init__(self, mesaj):
+        pass
 
 
 def Ack():
     def __init__(self, mesaj):
+        pass
 
 
 if __name__ == '__main__':
     print('Hello world')
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
     # serverDHCP.run()
     # am stricat tot?

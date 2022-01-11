@@ -29,12 +29,14 @@ class Ui_MainWindow(object):
         self.MainFrame.setObjectName("MainFrame")
         self.OutputReadOnly = QtWidgets.QTextEdit(self.MainFrame)
         self.OutputReadOnly.setGeometry(QtCore.QRect(50, 460, 531, 251))
-        self.OutputReadOnly.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.OutputReadOnly.setStyleSheet(
+            "background-color: rgb(255, 255, 255);")
         self.OutputReadOnly.setReadOnly(True)
         self.OutputReadOnly.setObjectName("OutputReadOnly")
         self.TextStartAddr = QtWidgets.QLineEdit(self.MainFrame)
         self.TextStartAddr.setGeometry(QtCore.QRect(50, 110, 251, 41))
-        self.TextStartAddr.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.TextStartAddr.setStyleSheet(
+            "background-color: rgb(255, 255, 255);")
         self.TextStartAddr.setObjectName("TextStartAddr")
         self.TextEndAddr = QtWidgets.QLineEdit(self.MainFrame)
         self.TextEndAddr.setGeometry(QtCore.QRect(330, 110, 251, 41))
@@ -80,6 +82,7 @@ class Ui_MainWindow(object):
         self.LabelNetmask.setGeometry(QtCore.QRect(420, 290, 151, 21))
         self.LabelNetmask.setObjectName("LabelNetmask")
         MainWindow.setCentralWidget(self.centralwidget)
+        self.TextNetmask.setText("xd")
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -88,12 +91,18 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Server DHCP"))
         self.ButtonSave.setText(_translate("MainWindow", "Save Settings"))
-        self.LabelStartA.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Start Address</span></p></body></html>"))
-        self.LabelEndA.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">End Address</span></p><p><br/></p></body></html>"))
-        self.LabelHostN.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Host Name</span></p><p><br/></p></body></html>"))
-        self.LabelLeaseT.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Lease time</span></p><p><br/></p></body></html>"))
-        self.LabelDomainS.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Domain Server</span></p><p><br/></p></body></html>"))
-        self.LabelNetmask.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Netmask</span></p><p><br/></p></body></html>"))
+        self.LabelStartA.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Start Address</span></p></body></html>"))
+        self.LabelEndA.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">End Address</span></p><p><br/></p></body></html>"))
+        self.LabelHostN.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Host Name</span></p><p><br/></p></body></html>"))
+        self.LabelLeaseT.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Lease time</span></p><p><br/></p></body></html>"))
+        self.LabelDomainS.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Domain Server</span></p><p><br/></p></body></html>"))
+        self.LabelNetmask.setText(_translate(
+            "MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; font-weight:600;\">Netmask</span></p><p><br/></p></body></html>"))
 
 
 if __name__ == "__main__":
