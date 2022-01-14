@@ -113,8 +113,8 @@ class Ui_MainWindow(object):
     def completariStatice(self):
         self.TextStartAddr.setText("192.168.1.2")
         self.TextEndAddr.setText("192.168.1.50")
-        self.TextHostN.setText("JANGHINA DHCP :fire:")
-        self.TextLeaseT.setText("o zi")
+        self.TextHostN.setText("Server blana")
+        self.TextLeaseT.setText("86400 secunde")
         self.TextDomainS.setText("192.168.1.1")
         self.TextNetmask.setText("255.255.255.0")
 

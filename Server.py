@@ -23,7 +23,7 @@ class DHCP_server(object):
 
     def server(self, in_q):
 
-        in_q.put("\nServerul dhcp se initializeaza.. :) \n")
+        in_q.put("\nServerul dhcp se initializeaza... offff.. :) \n")
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
@@ -32,11 +32,11 @@ class DHCP_server(object):
 
         while 1:
             try:
-                in_q.put("\n1) Astept mesaj discovery de la client.\n")
+                in_q.put("\n1) Astept mesaj discovery de la client :>\n")
                 data, address = s.recvfrom(MAX_BYTES)
                 in_q.put("\n2) Am primit mesaj discovery :O\n")
 
-                in_q.put("\n3) Se trimitere offer!.\n")
+                in_q.put("\n3) Se trimitere oferta :((\n")
                 data = DHCP_server.offer_get(self)
                 s.sendto(data, dest)
                 while 1:
@@ -45,7 +45,7 @@ class DHCP_server(object):
                         data, address = s.recvfrom(MAX_BYTES)
                         in_q.put("\n5) Am primit mesaj request ^^\n")
 
-                        in_q.put("\n6) Trimit mesaj pack\n")
+                        in_q.put("\n6) Trimit mesaj pack <3\n")
                         data = DHCP_server.pack_get(self, in_q)
                         s.sendto(data, dest)
                         break
