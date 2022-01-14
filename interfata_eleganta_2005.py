@@ -119,7 +119,7 @@ class Ui_MainWindow(object):
         self.TextNetmask.setText("255.255.255.0")
 
 
-def func(out_q):
+def interfata(out_q):
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -128,14 +128,14 @@ def func(out_q):
     MainWindow.show()
     ui.completariStatice()
 
-    def mor():
+    def log():
         data = out_q.get()
         if(data):
             ui.adaugaText(data)
         else:
             pass
     timer = QtCore.QTimer()
-    timer.timeout.connect(mor)
+    timer.timeout.connect(log)
     timer.start(1000)
     sys.exit(app.exec_())
 
@@ -144,4 +144,4 @@ if __name__ == "__main__":
     q = Queue()
     dhcp_server = DHCP_server()
     x = threading.Thread(target=dhcp_server.server, args=(q,)).start()
-    y = threading.Thread(target=func, args=(q,)).start()
+    y = threading.Thread(target=interfata, args=(q,)).start()
